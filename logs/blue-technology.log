@@ -1,0 +1,934 @@
+2025-06-27 11:52:38,743 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 11:52:43,844 django.request WARNING  Not Found: /logins
+2025-06-27 11:54:56,688 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-27 11:54:58,331 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 11:55:24,095 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-27 11:55:25,907 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 11:55:28,310 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-27 11:55:30,168 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 14:06:44,648 django.request ERROR    Internal Server Error: /login/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\auth\views.py", line 90, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\auth\views.py", line 114, in get_context_data
+    current_site = get_current_site(self.request)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\sites\shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\sites\models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\sites\models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+2025-06-27 15:01:55,075 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\users\admin.py changed, reloading.
+2025-06-27 15:01:57,664 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 15:15:20,629 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\users\models.py changed, reloading.
+2025-06-27 15:15:26,484 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 15:32:32,711 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 15:35:29,072 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 15:36:14,972 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\users\models.py changed, reloading.
+2025-06-27 15:36:17,094 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 16:19:03,892 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-27 16:19:14,182 django.request WARNING  Not Found: /login/
+2025-06-27 16:19:29,588 django.request WARNING  Not Found: /login/
+2025-06-28 10:07:56,794 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\users\forms.py changed, reloading.
+2025-06-28 10:08:07,101 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 10:17:55,200 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 10:20:35,095 django.utils.autoreload INFO     F:\Workspace\concordnet\home\views.py changed, reloading.
+2025-06-28 10:20:36,786 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 10:20:40,292 django.utils.autoreload INFO     F:\Workspace\concordnet\home\views.py changed, reloading.
+2025-06-28 10:20:41,720 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 10:21:48,989 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 10:22:03,402 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 10:23:32,367 django.security.csrf WARNING  Forbidden (CSRF token from POST incorrect.): /login/
+2025-06-28 11:08:49,777 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-28 11:08:52,367 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 11:12:39,905 django.security.csrf WARNING  Forbidden (Origin checking failed - https://0329-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-06-28 11:12:59,279 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 11:13:05,283 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 11:13:33,257 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 11:13:47,357 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 11:14:11,127 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 11:17:23,509 django.security.csrf WARNING  Forbidden (Origin checking failed - https://0329-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-06-28 11:17:59,152 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-28 11:18:01,210 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 11:45:12,775 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-28 11:45:15,056 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 11:48:10,597 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-28 11:48:13,133 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 11:52:22,877 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\users\views.py changed, reloading.
+2025-06-28 11:52:24,865 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-28 12:16:08,331 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 12:16:16,236 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 19:08:22,877 django.request WARNING  Not Found: /accounts/login/
+2025-06-28 19:08:23,836 django.request WARNING  Not Found: /favicon.ico
+2025-06-28 19:08:31,502 django.request WARNING  Not Found: /accounts/login/
+2025-06-30 09:56:14,769 django.request WARNING  Not Found: /accounts/login/
+2025-06-30 10:17:49,040 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:18:47,075 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\models.py changed, reloading.
+2025-06-30 10:18:48,965 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:19:36,140 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\models.py changed, reloading.
+2025-06-30 10:19:38,058 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:23:09,456 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:23:11,912 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:23:17,967 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:23:19,760 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:23:24,305 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:23:26,082 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:23:30,579 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:23:32,173 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:28:26,361 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-06-30 10:28:28,025 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:29:56,131 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-30 10:29:57,882 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:30:10,437 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-30 10:30:12,232 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:30:45,011 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:38:54,005 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:38:56,184 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 10:39:00,809 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\admin.py changed, reloading.
+2025-06-30 10:39:02,652 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 13:59:52,666 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-30 14:02:22,960 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:06:16,483 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:07:00,960 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:09:02,236 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:09:45,752 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:10:55,183 django.request ERROR    Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view apps.products.views.product_list didn't return an HttpResponse object. It returned None instead.
+2025-06-30 14:13:17,062 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-06-30 14:13:19,332 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 14:13:28,397 django.request ERROR    Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 15, in product_list
+    return render(request, "pages/product_list.html", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_list' not found. 'product_list' is not a valid view function or pattern name.
+2025-06-30 15:58:53,222 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-06-30 15:59:06,224 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 15:59:49,959 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-06-30 15:59:51,967 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 16:00:29,628 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-30 16:00:31,207 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 16:01:10,289 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\urls.py changed, reloading.
+2025-06-30 16:01:11,946 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 16:13:35,277 django.request ERROR    Internal Server Error: /shop/shop/drone-irrigation/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 24, in product_detail
+    return render(request, "shop/product_detail.html", {"product": product})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: shop/product_detail.html
+2025-06-30 16:13:59,131 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-06-30 16:14:10,172 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-06-30 16:28:13,588 django.request WARNING  Not Found: /accounts/login/
+2025-06-30 16:28:14,943 django.request WARNING  Not Found: /favicon.ico
+2025-07-01 09:16:46,272 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 09:23:09,124 django.request WARNING  Not Found: /favicon.ico
+2025-07-01 09:38:06,716 django.request WARNING  Not Found: /accounts/login/
+2025-07-01 09:38:07,738 django.request WARNING  Not Found: /favicon.ico
+2025-07-01 10:17:22,706 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 10:19:41,725 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 10:41:20,285 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-01 10:43:14,206 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 11:38:22,957 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 11:38:25,826 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 11:38:33,358 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-01 11:38:35,284 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 12:40:40,784 django.request ERROR    Internal Server Error: /shop/shop/drone-irrigation/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'products'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 26, in product_detail
+    return render(request, "pages/product_detail.html", {"product": product})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'products' is not a registered namespace
+2025-07-01 12:41:41,365 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 12:41:46,701 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 12:42:33,195 django.request WARNING  Not Found: /shop/cart/
+2025-07-01 12:50:30,207 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-01 12:50:32,205 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 12:56:55,372 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-01 12:56:58,168 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 12:57:05,133 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'cart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 103, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'cart' is not a registered namespace
+2025-07-01 12:58:23,099 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 103, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_remove' with keyword arguments '{'product_id': ''}' not found. 1 pattern(s) tried: ['shop/remove/(?P<product_id>[0-9]+)/\\Z']
+2025-07-01 13:04:48,668 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'cart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 103, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'cart' is not a registered namespace
+2025-07-01 14:21:06,919 django.request ERROR    Internal Server Error: /shop/shop/drone-irrigation/
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 26, in product_detail
+    return render(request, "pages/product_detail.html", {"product": product})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 514, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 531, in extend_nodelist
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: <ExtendsNode: extends 'pages/base.html'> must be the first tag in the template.
+2025-07-01 14:42:28,098 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 14:42:32,043 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 14:42:53,119 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 14:42:55,094 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 14:43:25,537 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-01 14:43:27,405 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-01 16:20:46,707 django.request WARNING  Not Found: /accounts/login/
+2025-07-01 16:20:48,489 django.request WARNING  Not Found: /favicon.ico
+2025-07-01 16:20:56,553 django.request WARNING  Not Found: /accounts/login/
+2025-07-01 17:04:05,019 django.request WARNING  Not Found: /accounts/login/
+2025-07-01 17:04:13,520 django.request WARNING  Not Found: /accounts/login/
+2025-07-01 17:05:09,140 django.security.csrf WARNING  Forbidden (Origin checking failed - https://9dd9-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-02 09:11:09,830 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 09:12:46,528 django.request WARNING  Not Found: /favicon.ico
+2025-07-02 09:15:14,964 django.request WARNING  Not Found: /accounts/login/
+2025-07-02 09:15:16,057 django.request WARNING  Not Found: /favicon.ico
+2025-07-02 11:30:39,716 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 101, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_update' not found. 'cart_update' is not a valid view function or pattern name.
+2025-07-02 11:35:10,493 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-02 11:35:19,955 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 11:59:51,239 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\models.py changed, reloading.
+2025-07-02 11:59:52,881 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 12:00:43,573 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 12:31:53,428 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-02 12:31:54,932 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 12:32:33,956 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-02 12:32:35,201 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:13:30,458 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-02 14:14:07,405 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:19:26,162 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-02 14:19:27,714 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:19:29,853 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-02 14:19:31,053 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:20:58,695 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\apps\products\views.py", line 127, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' not found. 'order_create' is not a valid view function or pattern name.
+2025-07-02 14:26:25,481 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-02 14:26:26,687 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:30:15,701 django.request ERROR    Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\home\views.py", line 37, in index
+    return render(request, 'pages/home.html', {'form': feedb})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Renney\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Renney\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'products'
+2025-07-02 14:32:25,873 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-02 14:32:27,162 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 14:32:45,912 django.request ERROR    Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\home\views.py", line 37, in index
+    return render(request, 'pages/home.html', {'form': feedb})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Workspace\concordnet\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_detail' not found. 'cart_detail' is not a valid view function or pattern name.
+2025-07-02 14:44:15,719 django.request WARNING  Not Found: /shop/checkout/
+2025-07-02 14:47:28,879 django.request WARNING  Not Found: /shop/checkout/
+2025-07-02 14:58:05,280 django.request WARNING  Not Found: /accounts/login/
+2025-07-02 14:59:03,470 django.security.csrf WARNING  Forbidden (Origin checking failed - https://ae1d-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-02 14:59:10,572 django.security.csrf WARNING  Forbidden (Origin checking failed - https://ae1d-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-02 14:59:43,330 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-02 14:59:45,927 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 15:00:03,840 django.security.csrf WARNING  Forbidden (Origin checking failed - https://ae1d-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-02 15:00:11,674 django.request WARNING  Not Found: /accounts/login/
+2025-07-02 15:00:37,917 django.security.csrf WARNING  Forbidden (Origin checking failed - https://ae1d-41-79-8-21.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-02 15:36:24,680 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-02 15:36:26,888 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 15:36:55,595 django.request WARNING  Not Found: /shop/checkout/
+2025-07-02 15:37:35,742 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\urls.py changed, reloading.
+2025-07-02 15:37:37,246 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-02 17:00:43,299 django.request WARNING  Not Found: /accounts/login/
+2025-07-03 09:22:11,334 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-03 11:25:48,969 django.request WARNING  Not Found: /favicon.ico
+2025-07-03 14:11:53,316 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.

@@ -1,0 +1,30 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="login-wrapper">
+    <div class="login-image">
+        <img src="{% static 'img/register-img.jpg' %}" alt="Register Image">
+    </div>
+    <div class="login-form">
+        <h2>Create Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+    			<div class="form-group">
+      				{{ field.label_tag }}
+      				{{ field }}
+      				{% if field.errors %}
+        				<div class="error">{{ field.errors.0 }}</div>
+      				{% endif %}
+    			</div>
+  			{% endfor %}
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+</div>
+{% endblock %}

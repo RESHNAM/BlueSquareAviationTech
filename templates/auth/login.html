@@ -1,0 +1,27 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+<div class="login-wrapper">
+    <div class="login-image">
+        <img src="{% static 'img/producciones.jpg' %}" alt="Drone Login">
+    </div>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div>
+                {{ form.username.label_tag }}  <!-- Actually email -->
+                {{ form.username }}
+            </div>
+            <div>
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+</div>
+{% endblock %}
+
