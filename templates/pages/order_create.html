@@ -1,9 +1,100 @@
 {% extends 'pages/base.html' %}
+{% load static %}
 {% block content %}
-<h2>Checkout</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Place Order</button>
-</form>
+<style>
+    .checkout-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .checkout-container h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 30px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+        .checkout-container {
+            margin: 20px;
+            padding: 20px;
+        }
+    }
+</style>
+
+<div class="checkout-container">
+    <h2>Checkout</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">First name:</label>
+            {{ form.first_name }}
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last name:</label>
+            {{ form.last_name }}
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            {{ form.address }}
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            {{ form.city }}
+        </div>
+        <div class="form-group">
+            <label for="postal_code">Postal code:</label>
+            {{ form.postal_code }}
+        </div>
+        <button type="submit">Place Order</button>
+    </form>
+</div>
 {% endblock %}
+

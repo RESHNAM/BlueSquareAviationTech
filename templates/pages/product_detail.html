@@ -14,6 +14,12 @@
       {% csrf_token %}
       <button type="submit" class="add-to-cart-btn">Add to Cart</button>
     </form>
+    {% comment %} <form id="add-to-cart-form" method="post" action="{% url 'shop:cart_add' product.id %}">
+        {% csrf_token %}
+        <input type="number" name="quantity" value="1" min="1" />
+        <input type="hidden" name="override" value="false">
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </form> {% endcomment %}
     <div class="cart-actions">
         <a href="{% url 'shop:product_list' %}" class="back-button">← Back to Products</a>
     </div>
@@ -94,4 +100,30 @@
         text-decoration: none;
     }
 </style>
+<script>
+    document.getElementById("add-to-cart-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const form = this;
+        const url = form.action;
+        const formData = new FormData(form);
+
+        fetch(url, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error("Cart add failed.");
+            return fetch("{% url 'apps.products:cart_count' %}");
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("cart-count").textContent = data.cart_count;
+        })
+        .catch(error => console.error("Error updating cart count:", error));
+    });
+</script>
 {% endblock %}
