@@ -16,6 +16,8 @@ from str2bool import str2bool
 import logging
 import logging.config
 from django.utils.log import DEFAULT_LOGGING
+import dj_database_url
+
 
 load_dotenv()  # take environment variables from .env.
 
@@ -116,14 +118,19 @@ DB_NAME = os.getenv('DB_NAME', None)
 
 if DB_ENGINE and DB_NAME and DB_USERNAME:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.' + DB_ENGINE,
-            'NAME': DB_NAME,
-            'USER': DB_USERNAME,
-            'PASSWORD': DB_PASS,
-            'HOST': DB_HOST,
-            'PORT': DB_PORT,
-        },
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.' + DB_ENGINE,
+        #     'NAME': DB_NAME,
+        #     'USER': DB_USERNAME,
+        #     'PASSWORD': DB_PASS,
+        #     'HOST': DB_HOST,
+        #     'PORT': DB_PORT,
+        # },
+        'default': dj_database_url.config(
+            default='postgresql://concordnet_servant:YeoU8kNjDV4fTsmIBlaxkIoMDp543T5b@dpg-d1j7quemcj7s73abdo2g-a.oregon-postgres.render.com/concordnet_master',
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
 else:
     raise Exception
