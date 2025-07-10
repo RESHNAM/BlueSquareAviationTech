@@ -8,11 +8,11 @@ def register_view(request):
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            # form.save()
-            user = form.save(commit=False)
-            user.is_superuser = True
-            user.is_staff = True
-            user.save()
+            form.save()
+            # user = form.save(commit=False)
+            # user.is_superuser = True
+            # user.is_staff = True
+            # user.save()
             messages.success(request, "Account User created successfully. You can now log in.")
             return redirect('login')  # Redirect to login after registration
     else:
