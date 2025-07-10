@@ -214,7 +214,6 @@ AUTH_USER_MODEL = "users.User"
 
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://localhost:8000', 'https://bluesquareaviation.onrender.com/']
 
 CART_SESSION_ID = 'cart'
 
