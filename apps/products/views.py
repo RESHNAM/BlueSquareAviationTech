@@ -6,6 +6,7 @@ from django.views.decorators.http import require_POST
 from .forms import OrderCreateForm
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -15,7 +16,7 @@ def product_list(request, category_slug=None):
     products = Product.objects.filter(available=True)
 
     sort = request.GET.get("sort")
-    
+
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
@@ -29,10 +30,15 @@ def product_list(request, category_slug=None):
     elif sort == "name_desc":
         products = products.order_by("-name")
 
-    return render(request, "pages/product_list.html", {
-        "category": category,
-        "categories": categories,
-        "products": products,
+    # Pagination
+    paginator = Paginator(products, 12)  # 12 products per page
+    page_number = request.GET.get('page')
+    products_page = paginator.get_page(page_number)
+
+    return render(request, 'pages/product_list.html', {
+        'category': category,
+        'categories': categories,
+        'products': products_page,
     })
 
 

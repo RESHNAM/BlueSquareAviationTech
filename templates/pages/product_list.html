@@ -19,37 +19,23 @@
         height: fit-content;
     }
 
-    .category-sidebar h3 {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-
-    .category-sidebar ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .category-sidebar ul li {
-        margin-bottom: 8px;
-    }
-
-    .category-sidebar ul li a {
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .category-sidebar ul li a:hover {
-        text-decoration: underline;
-    }
-
     .products-section {
         flex: 1;
     }
 
     .sort-bar {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         margin-bottom: 20px;
+    }
+
+    .sort-bar .back-button {
+        padding: 8px 12px;
+        background: #f1f1f1;
+        color: #007bff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
     }
 
     .sort-bar select {
@@ -112,6 +98,33 @@
     .product-card .btn:hover {
         background-color: #0056b3;
     }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 8px;
+    }
+
+    .pagination a,
+    .pagination span {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+    }
+
+    .pagination span.current {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .pagination a:hover {
+        background-color: #e9ecef;
+    }
 </style>
 
 <div class="main-shop-wrapper">
@@ -126,9 +139,11 @@
         </ul>
     </aside>
 
-    <!-- Products + Sort -->
+    <!-- Products & Sort -->
     <div class="products-section">
         <div class="sort-bar">
+            <a href="{% url 'home:index' %}" class="back-button">← Back to Home</a>
+
             <form method="get">
                 <label for="sort">Sort by:</label>
                 <select name="sort" id="sort" onchange="this.form.submit()">
@@ -155,6 +170,27 @@
             <p>No products found.</p>
             {% endfor %}
         </div>
+
+        <!-- Pagination -->
+        {% if products.has_other_pages %}
+        <div class="pagination">
+            {% if products.has_previous %}
+                <a href="?page={{ products.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">← Prev</a>
+            {% endif %}
+
+            {% for num in products.paginator.page_range %}
+                {% if products.number == num %}
+                    <span class="current">{{ num }}</span>
+                {% else %}
+                    <a href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">Next →</a>
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
