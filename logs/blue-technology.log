@@ -1763,3 +1763,20 @@ ValueError: Missing staticfiles manifest entry for 'css/style.css'
 2025-07-11 15:43:09,571 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\models.py changed, reloading.
 2025-07-11 15:43:13,621 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-07-11 15:43:26,763 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\models.py changed, reloading.
+2025-07-11 15:43:30,315 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-11 16:53:39,969 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-11 16:54:05,214 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-12 10:05:11,751 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-12 10:05:15,505 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-12 10:07:30,283 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-12 10:07:41,675 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-12 10:08:35,117 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-12 10:08:37,358 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-12 10:11:48,903 django.utils.autoreload INFO     F:\Workspace\concordnet\apps\products\views.py changed, reloading.
+2025-07-12 10:11:59,880 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-15 11:07:33,194 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-15 14:26:01,844 django.request WARNING  Not Found: /favicon.ico
+2025-07-16 14:40:39,769 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-16 16:09:06,434 django.utils.autoreload INFO     F:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-16 16:09:25,094 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-21 10:10:32,504 django.utils.autoreload INFO     Watching for file changes with StatReloader
