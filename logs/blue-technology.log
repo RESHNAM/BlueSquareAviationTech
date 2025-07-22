@@ -1785,3 +1785,4 @@ ValueError: Missing staticfiles manifest entry for 'css/style.css'
 2025-07-21 14:11:25,643 django.request WARNING  Not Found: /accounts/login/
 2025-07-21 14:11:26,022 django.request WARNING  Not Found: /favicon.ico
 2025-07-21 14:11:36,096 django.request WARNING  Not Found: /accounts/login/
+2025-07-21 14:14:22,811 django.utils.autoreload INFO     Watching for file changes with StatReloader
