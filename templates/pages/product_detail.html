@@ -1,90 +1,137 @@
 {% extends 'pages/base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="product-detail-container">
-  <div class="product-image">
-    <img src="{{ product.image.url }}" alt="{{ product.name }}">
-  </div>
-  <div class="product-info">
-    <h1>{{ product.name }}</h1>
-    <p class="product-price">Ksh {{ product.price }}</p>
-    <p class="product-description">{{ product.description }}</p>
-
-    <form action="{% url 'shop:cart_add' product.id %}" method="post">
-      {% csrf_token %}
-      <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-    </form>
-    {% comment %} <form id="add-to-cart-form" method="post" action="{% url 'shop:cart_add' product.id %}">
-        {% csrf_token %}
-        <input type="number" name="quantity" value="1" min="1" />
-        <input type="hidden" name="override" value="false">
-        <button type="submit" class="btn btn-primary">Add to Cart</button>
-    </form> {% endcomment %}
-    <div class="cart-actions">
-        <a href="{% url 'shop:product_list' %}" class="back-button">← Back to Products</a>
+<div class="product-detail-main">
+    <div class="product-gallery">
+        <div class="main-image">
+            <img id="mainProductImage" src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="thumbnail-row">
+            <img src="{{ product.image.url }}" alt="Thumbnail 1" class="thumb active" onclick="changeImage(this)">
+            {% for img in product.gallery_images.all %}
+                <img src="{{ img.image.url }}" alt="Thumbnail" class="thumb" onclick="changeImage(this)">
+            {% endfor %}
+        </div>
     </div>
-  </div>
+    <div class="product-summary">
+        <h1 class="product-title">{{ product.name }}</h1>
+        <div class="product-price">Ksh {{ product.price }}</div>
+        <div class="product-short-desc">{{ product.short_description }}</div>
+        <form action="{% url 'shop:cart_add' product.id %}" method="post" class="add-to-cart-form">
+            {% csrf_token %}
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <div class="cart-actions">
+            <a href="{% url 'shop:product_list' %}" class="back-button">← Back to Products</a>
+        </div>
+        <ul class="product-features">
+            {% for feature in product.features.all %}
+                <li>{{ feature }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="product-tabs">
+    <ul class="tab-nav">
+        <li class="active" onclick="showTab('desc')">Description</li>
+        <li onclick="showTab('specs')">Specs</li>
+        <li onclick="showTab('reviews')">Reviews</li>
+    </ul>
+    <div class="tab-content" id="desc-tab">
+        <h3>Description</h3>
+        <p>{{ product.description|linebreaks }}</p>
+    </div>
+    <div class="tab-content" id="specs-tab" style="display:none;">
+        <h3>Specifications</h3>
+        <ul>
+            {% for spec in product.specs.all %}
+                <li>{{ spec }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="tab-content" id="reviews-tab" style="display:none;">
+        <h3>Reviews</h3>
+        <p>No reviews yet.</p>
+    </div>
 </div>
 
 <style>
-    .product-detail-container {
+    .product-detail-main {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1100px;
-        margin: 40px auto;
         gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
         padding: 0 20px;
     }
-
-    .product-image img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .product-info {
+    .product-gallery {
         flex: 1;
+        max-width: 500px;
     }
-
-    .product-info h1 {
-        font-size: 2rem;
+    .main-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+    .thumbnail-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .thumb {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 2px solid #eee;
+        cursor: pointer;
+        transition: border 0.2s;
+    }
+    .thumb.active, .thumb:hover {
+        border: 2px solid #007bff;
+    }
+    .product-summary {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .product-title {
+        font-size: 2.2rem;
         margin-bottom: 10px;
     }
-
     .product-price {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         color: #007bff;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+        font-weight: 600;
     }
-
-    .product-description {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 30px;
-        line-height: 1.6;
+    .product-short-desc {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 22px;
     }
-
+    .add-to-cart-form {
+        margin-bottom: 18px;
+    }
     .add-to-cart-btn {
         background-color: #007bff;
         color: #fff;
-        padding: 12px 24px;
+        padding: 14px 32px;
         border: none;
         border-radius: 6px;
         font-weight: bold;
+        font-size: 1.1rem;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.2s;
     }
-
     .add-to-cart-btn:hover {
         background-color: #0056b3;
     }
-
     .back-button {
         display: inline-block;
+        margin-top: 10px;
         padding: 10px 16px;
         background-color: #f8f9fa;
         color: #007bff;
@@ -92,38 +139,67 @@
         border-radius: 5px;
         text-decoration: none;
         font-weight: 500;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.2s;
     }
-
     .back-button:hover {
         background-color: #e2e6ea;
-        text-decoration: none;
     }
+    .product-features {
+        margin-top: 18px;
+        padding-left: 18px;
+        color: #333;
+    }
+    .product-tabs {
+        max-width: 1200px;
+        margin: 40px auto 0 auto;
+        padding: 0 20px;
+    }
+    .tab-nav {
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid #eee;
+        margin-bottom: 20px;
+        list-style: none;
+        padding-left: 0;
+    }
+    .tab-nav li {
+        padding: 10px 0;
+        cursor: pointer;
+        font-weight: 600;
+        color: #555;
+        border-bottom: 2px solid transparent;
+        transition: border 0.2s, color 0.2s;
+    }
+    .tab-nav li.active {
+        color: #007bff;
+        border-bottom: 2px solid #007bff;
+    }
+    .tab-content {
+        display: block;
+        padding: 10px 0 30px 0;
+    }
+    @media (max-width: 900px) {
+    .product-detail-main {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .product-gallery, .product-summary {
+        max-width: 100%;
+    }
+}
 </style>
+
 <script>
-    document.getElementById("add-to-cart-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const form = this;
-        const url = form.action;
-        const formData = new FormData(form);
-
-        fetch(url, {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("Cart add failed.");
-            return fetch("{% url 'apps.products:cart_count' %}");
-        })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("cart-count").textContent = data.cart_count;
-        })
-        .catch(error => console.error("Error updating cart count:", error));
-    });
+    function changeImage(imgElem) {
+        document.getElementById('mainProductImage').src = imgElem.src;
+        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+        imgElem.classList.add('active');
+    }
+    function showTab(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+        document.getElementById(tab + '-tab').style.display = 'block';
+        document.querySelectorAll('.tab-nav li').forEach(li => li.classList.remove('active'));
+        document.querySelector('.tab-nav li[onclick*="' + tab + '"]').classList.add('active');
+    }
 </script>
 {% endblock %}
