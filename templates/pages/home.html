@@ -569,6 +569,13 @@
 			font-style: normal; /* remove italic if needed */
 		}
 
+		.heading--desc {
+			font-size: 16px;
+			color: #1f1f1fff; /* darker gray */
+			font-weight: 500;
+			font-style: normal; /* remove italic if needed */
+		}
+
 		/* Force row to fill full height and stretch content */
 		#about .row {
 			display: flex;
@@ -590,6 +597,8 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			object-position: center;
+			display: block;
 		}
 
 	</style>
@@ -724,10 +733,10 @@
 		<!-- About
 		=== === === === === === === === === === === === === === -->
 		<section id="about" class="section about pb-0">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInUp">
-						<img class="img-fluid w-100 about-image" src="static/img/drone-agrics.jpg" alt="ipad" style="height: 100%; object-fit: cover; mix-blend-mode: multiply;"/>
+			<div class="container-fluid">
+				<div class="row no-gutters align-items-stretch">
+					<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInUp p-0">
+						<img class="img-fluid w-100 h-100 about-image" src="static/img/drone-agrics.jpg" alt="ipad" style="height: 100%; object-fit: cover; mix-blend-mode: multiply;"/>
 					</div>
 					<!-- .col-md-6 end -->
 					<div class="col-xs-12 col-sm-12 col-md-6">
@@ -1019,6 +1028,93 @@
 			<!-- .container end -->
 		</section>
 		<!-- #banner3 end -->
+
+		<!-- Partners & Clients Section -->
+		<section id="partners" class="section bg-white py-5">
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 text-center">
+						<div class="heading heading-1 wow fadeInUp" 		data-wow-duration="1s">
+							<h2 class="heading--title">Our Partners & Clients</h2>
+							<p class="heading--desc">We are proud to collaborate with leading organizations and valued clients across Africa and beyond.</p>
+							<div class="heading--divider mb-60 heading--center"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					<!-- Partner Logo 1 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/partner1.png' %}" alt="Partner 1" class="img-fluid" style="max-height: 60px;">
+					</div>
+					<!-- Partner Logo 2 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/partner2.png' %}" alt="Partner 2" class="img-fluid" style="max-height: 60px;">
+					</div>
+					<!-- Partner Logo 3 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/partner3.png' %}" alt="Partner 3" class="img-fluid" style="max-height: 60px;">
+					</div>
+					<!-- Partner Logo 4 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/partner4.png' %}" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
+					</div>
+					<!-- Add more as needed -->
+				</div>
+			</div>
+		</section>
+		<!-- #banner4 end -->
+
+		<!-- Case Studies & Portfolio Section -->
+		<section id="case-studies" class="section bg-light py-5">
+			<div class="container">
+				<div class="row clearfix">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 text-center">
+					<div class="heading heading-1 wow fadeInUp" data-wow-duration="1s">
+						<h2 class="heading--title">Case Studies & Portfolio</h2>
+						<p class="heading--desc">Explore some of our recent projects and success stories across Africa.</p>
+						<div class="heading--divider mb-60 heading--center"></div>
+					</div>
+				</div>
+				</div>
+				<div class="row">
+				<!-- Case Study 1 -->
+				<div class="col-12 col-sm-6 col-md-4 mb-4">
+					<div class="card h-100 shadow-sm">
+						<img src="{% static 'img/case-agriculture.jpg' %}" class="card-img-top" alt="Agriculture Project">
+						<div class="card-body">
+							<h5 class="card-title">Smart Agriculture Monitoring</h5>
+							<p class="card-text">Deployed precision drones for crop health analysis, increasing yields by 20% for a major farm in Kenya.</p>
+							<span class="badge badge-success">Agriculture</span>
+						</div>
+					</div>
+				</div>
+				<!-- Case Study 2 -->
+				<div class="col-12 col-sm-6 col-md-4 mb-4">
+					<div class="card h-100 shadow-sm">
+						<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+						<div class="card-body">
+							<h5 class="card-title">Bridge Inspection</h5>
+							<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+							<span class="badge badge-info">Infrastructure</span>
+						</div>
+					</div>
+				</div>
+				<!-- Case Study 3 -->
+				<div class="col-12 col-sm-6 col-md-4 mb-4">
+					<div class="card h-100 shadow-sm">
+						<img src="{% static 'img/case-healthcare.jpg' %}" class="card-img-top" alt="Healthcare Project">
+						<div class="card-body">
+							<h5 class="card-title">Medical Drone Delivery</h5>
+							<p class="card-text">Enabled rapid delivery of vaccines and medical supplies to remote clinics in under 30 minutes.</p>
+							<span class="badge badge-primary">Healthcare</span>
+						</div>
+					</div>
+				</div>
+				<!-- Add more case studies as needed -->
+				</div>
+			</div>
+		</section>
+		<!-- #banner5 end -->
 		<!-- Testimonial #2
 		=== === === === === === === === === === === === === === -->
 		<section id="testimonial" class="testimonial">
