@@ -601,6 +601,33 @@
 			display: block;
 		}
 
+		/* Equal height and width for case study cards */
+		#case-studies .card {
+			height: 100%;
+			min-height: 420px;   /* Adjust as needed */
+			max-width: 350px;    /* Optional: for consistent width */
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			flex-direction: column;
+		}
+		#case-studies .card-img-top {
+			height: 180px;
+			object-fit: cover;
+		}
+		#case-studies .card-body {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+		#case-studies .col-12, 
+		#case-studies .col-sm-6, 
+		#case-studies .col-md-4 {
+			display: flex;
+			align-items: stretch;
+		}
+
 	</style>
 	
 </head>
@@ -1115,97 +1142,6 @@
 			</div>
 		</section>
 		<!-- #banner5 end -->
-		<!-- Testimonial #2
-		=== === === === === === === === === === === === === === -->
-		<section id="testimonial" class="testimonial">
-			<div class="container">
-				<div class="row clearfix">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-						<div class="heading heading-1 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">Testimonials</h2>
-							<p class="heading--desc">Some of the feedback we have received from customers who have used our services on a day to day basis.</p>
-							<div class="heading--divider mb-80 heading--center"></div>
-						</div>
-					</div>
-					<!-- .col-md-6 end -->
-				</div>
-				<!-- .row end -->
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12">
-						<div class="carousel" data-slide="3" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="false" data-space="30" data-loop="true" data-speed="800">
-							<!-- Testimonial #1 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="static/img/marie.jpg" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>“Amazing support from the team. Whenever I have issues and reach out to custmer support, it's resolved within a matter of minutes”</p>
-								</div>
-								<!-- .testimonial-body end -->
-								<div class="testimonial--meta">
-									<h4 class="testimonial-name"><span>-</span> Laura Martins</h4>
-								</div>
-								<!-- .testimonial-meta end -->
-							</div>
-							<!-- .testimonial-panel end -->
-
-							<!-- Testimonial #2 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="static/img/ivana-square.jpg" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>“Simple user interface making it easy to navigate around the application.”</p>
-								</div>
-								<!-- .testimonial-body end -->
-								<div class="testimonial--meta">
-									<h4 class="testimonial-name"><span>-</span> Maya Jonson</h4>
-								</div>
-								<!-- .testimonial-meta end -->
-							</div>
-							<!-- .testimonial-panel end -->
-
-							<!-- Testimonial #3 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="static/img/kal-visuals-square.jpg" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>“I recently interracted with the platform and I can tell you I was impressed with how easy and fast it was to move around the application and get your image scaled up.”</p>
-								</div>
-								<!-- .testimonial-body end -->
-								<div class="testimonial--meta">
-									<h4 class="testimonial-name"><span>-</span> Keren Happuch</h4>
-								</div>
-								<!-- .testimonial-meta end -->
-							</div>
-							<!-- .testimonial-panel end -->
-
-
-							<!-- Testimonial #4 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="static/img/andre.jpg" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>“IT team sorted me on a very large file I was processing at the time.Immediately, I knew that I was in good hands.”</p>
-								</div>
-								<!-- .testimonial-body end -->
-								<div class="testimonial--meta">
-									<h4 class="testimonial-name"><span>-</span> Mark Smith</h4>
-								</div>
-								<!-- .testimonial-meta end -->
-							</div>
-							<!-- .testimonial-panel end -->
-						</div>
-					</div>
-					<!-- .col-md-12 end -->
-				</div>
-				<!-- .row end -->
-			</div>
-			<!-- .container end -->
-		</section> <!-- .testimonial2 end -->
-
 		<!-- Pricing 
 		=== === === === === === === === === === === === === === -->
 		<section id="products" class="py-5 section feature feature-2 feature-left bg-white mb-60">
@@ -1355,6 +1291,96 @@
 				</div>
   			</div>
 		</section>
+		<!-- Testimonial #2
+		=== === === === === === === === === === === === === === -->
+		<section id="testimonial" class="testimonial">
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+						<div class="heading heading-1 text--center wow fadeInUp" data-wow-duration="1s">
+							<h2 class="heading--title">Testimonials</h2>
+							<p class="heading--desc">Some of the feedback we have received from customers who have used our services on a day to day basis.</p>
+							<div class="heading--divider mb-80 heading--center"></div>
+						</div>
+					</div>
+					<!-- .col-md-6 end -->
+				</div>
+				<!-- .row end -->
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="carousel" data-slide="3" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="false" data-space="30" data-loop="true" data-speed="800">
+							<!-- Testimonial #1 -->
+							<div class="testimonial-panel">
+								<div class="testimonial--meta-img">
+									<img src="static/img/marie.jpg" alt="Testimonial Author">
+								</div>
+								<div class="testimonial--body">
+									<p>“Amazing support from the team. Whenever I have issues and reach out to custmer support, it's resolved within a matter of minutes”</p>
+								</div>
+								<!-- .testimonial-body end -->
+								<div class="testimonial--meta">
+									<h4 class="testimonial-name"><span>-</span> Laura Martins</h4>
+								</div>
+								<!-- .testimonial-meta end -->
+							</div>
+							<!-- .testimonial-panel end -->
+
+							<!-- Testimonial #2 -->
+							<div class="testimonial-panel">
+								<div class="testimonial--meta-img">
+									<img src="static/img/ivana-square.jpg" alt="Testimonial Author">
+								</div>
+								<div class="testimonial--body">
+									<p>“Simple user interface making it easy to navigate around the application.”</p>
+								</div>
+								<!-- .testimonial-body end -->
+								<div class="testimonial--meta">
+									<h4 class="testimonial-name"><span>-</span> Maya Jonson</h4>
+								</div>
+								<!-- .testimonial-meta end -->
+							</div>
+							<!-- .testimonial-panel end -->
+
+							<!-- Testimonial #3 -->
+							<div class="testimonial-panel">
+								<div class="testimonial--meta-img">
+									<img src="static/img/kal-visuals-square.jpg" alt="Testimonial Author">
+								</div>
+								<div class="testimonial--body">
+									<p>“I recently interracted with the platform and I can tell you I was impressed with how easy and fast it was to move around the application and get your image scaled up.”</p>
+								</div>
+								<!-- .testimonial-body end -->
+								<div class="testimonial--meta">
+									<h4 class="testimonial-name"><span>-</span> Keren Happuch</h4>
+								</div>
+								<!-- .testimonial-meta end -->
+							</div>
+							<!-- .testimonial-panel end -->
+
+
+							<!-- Testimonial #4 -->
+							<div class="testimonial-panel">
+								<div class="testimonial--meta-img">
+									<img src="static/img/andre.jpg" alt="Testimonial Author">
+								</div>
+								<div class="testimonial--body">
+									<p>“IT team sorted me on a very large file I was processing at the time.Immediately, I knew that I was in good hands.”</p>
+								</div>
+								<!-- .testimonial-body end -->
+								<div class="testimonial--meta">
+									<h4 class="testimonial-name"><span>-</span> Mark Smith</h4>
+								</div>
+								<!-- .testimonial-meta end -->
+							</div>
+							<!-- .testimonial-panel end -->
+						</div>
+					</div>
+					<!-- .col-md-12 end -->
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .container end -->
+		</section> <!-- .testimonial2 end -->
 		<!-- Banner 
 		=== === === === === === === === === === === === === === -->
 		<section id="banner" class="section cta pt-0 pb-0">

@@ -1797,3 +1797,10 @@ ValueError: Missing staticfiles manifest entry for 'css/style.css'
 2025-07-25 09:27:04,611 django.security.csrf WARNING  Forbidden (Origin checking failed - https://1589247add82.ngrok-free.app does not match any trusted origins.): /login/
 2025-07-25 09:27:43,984 django.utils.autoreload INFO     D:\Workspace\concordnet\concordnet\settings.py changed, reloading.
 2025-07-25 09:27:52,468 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-25 09:35:38,754 django.request WARNING  Not Found: /favicon.ico
+2025-07-25 10:32:38,905 django.request WARNING  Not Found: /accounts/login/
+2025-07-25 10:32:40,380 django.request WARNING  Not Found: /accounts/login/
+2025-07-25 10:32:41,765 django.request WARNING  Not Found: /favicon.ico
+2025-07-25 10:32:43,287 django.request WARNING  Not Found: /accounts/login/
+2025-07-25 10:33:04,959 django.request WARNING  Not Found: /accounts/login/
+2025-07-25 13:53:24,747 django.request WARNING  Not Found: /item/add-serials
