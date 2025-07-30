@@ -39,7 +39,7 @@ DEBUG = str2bool(os.environ.get('DEBUG'))
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000', 'https://bluesquareaviation.onrender.com', 'https://1589247add82.ngrok-free.app',]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000', 'https://bluesquareaviation.onrender.com', 'https://f8e32c9e74b2.ngrok-free.app',]
 
 # Application definition
 

@@ -1095,51 +1095,90 @@
 		<section id="case-studies" class="section bg-light py-5">
 			<div class="container">
 				<div class="row clearfix">
-				<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 text-center">
-					<div class="heading heading-1 wow fadeInUp" data-wow-duration="1s">
-						<h2 class="heading--title">Case Studies & Portfolio</h2>
-						<p class="heading--desc">Explore some of our recent projects and success stories across Africa.</p>
-						<div class="heading--divider mb-60 heading--center"></div>
-					</div>
-				</div>
-				</div>
-				<div class="row">
-				<!-- Case Study 1 -->
-				<div class="col-12 col-sm-6 col-md-4 mb-4">
-					<div class="card h-100 shadow-sm">
-						<img src="{% static 'img/case-agriculture.jpg' %}" class="card-img-top" alt="Agriculture Project">
-						<div class="card-body">
-							<h5 class="card-title">Smart Agriculture Monitoring</h5>
-							<p class="card-text">Deployed precision drones for crop health analysis, increasing yields by 20% for a major farm in Kenya.</p>
-							<span class="badge badge-success">Agriculture</span>
+					<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 text-center">
+						<div class="heading heading-1 wow fadeInUp" data-wow-duration="1s">
+							<h2 class="heading--title">Case Studies & Portfolio</h2>
+							<p class="heading--desc">Explore some of our recent projects and success stories across Africa.</p>
+							<div class="heading--divider mb-60 heading--center"></div>
 						</div>
 					</div>
 				</div>
-				<!-- Case Study 2 -->
-				<div class="col-12 col-sm-6 col-md-4 mb-4">
-					<div class="card h-100 shadow-sm">
-						<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
-						<div class="card-body">
-							<h5 class="card-title">Bridge Inspection</h5>
-							<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
-							<span class="badge badge-info">Infrastructure</span>
+				<!-- Swiper for Case Studies -->
+				<div class="swiper case-studies-swiper">
+					<div class="swiper-wrapper">
+						<!-- Case Study 1 -->
+						<div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-agriculture.jpg' %}" class="card-img-top" alt="Agriculture Project">
+								<div class="card-body">
+									<h5 class="card-title">Smart Agriculture Monitoring</h5>
+									<p class="card-text">Deployed precision drones for crop health analysis, increasing yields by 20% for a major farm in Kenya.</p>
+									<span class="badge badge-success">Agriculture</span>
+								</div>
+							</div>
+						</div>
+						<!-- Case Study 2 -->
+						<div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<div class="card-body">
+									<h5 class="card-title">Bridge Inspection</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<span class="badge badge-info">Infrastructure</span>
+								</div>
+							</div>
+						</div>
+						<!-- Case Study 3 -->
+						 <div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<div class="card-body">
+									<h5 class="card-title">Bridge Inspection</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<span class="badge badge-info">Infrastructure</span>
+								</div>
+							</div>
+						</div>
+						<!-- Case Study 4 -->
+						<div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<div class="card-body">
+									<h5 class="card-title">Bridge Inspection</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<span class="badge badge-info">Infrastructure</span>
+								</div>
+							</div>
+						</div>
+						<!-- Case Study 5 -->
+						 <div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<div class="card-body">
+									<h5 class="card-title">Bridge Inspection</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<span class="badge badge-info">Infrastructure</span>
+								</div>
+							</div>
+						</div>
+						<!-- Case Study 6 -->
+						 <div class="swiper-slide">
+							<div class="card h-100 shadow-sm">
+								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<div class="card-body">
+									<h5 class="card-title">Bridge Inspection</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<span class="badge badge-info">Infrastructure</span>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- Case Study 3 -->
-				<div class="col-12 col-sm-6 col-md-4 mb-4">
-					<div class="card h-100 shadow-sm">
-						<img src="{% static 'img/case-healthcare.jpg' %}" class="card-img-top" alt="Healthcare Project">
-						<div class="card-body">
-							<h5 class="card-title">Medical Drone Delivery</h5>
-							<p class="card-text">Enabled rapid delivery of vaccines and medical supplies to remote clinics in under 30 minutes.</p>
-							<span class="badge badge-primary">Healthcare</span>
-						</div>
-					</div>
-				</div>
-				<!-- Add more case studies as needed -->
-				</div>
-			</div>
+      				<!-- Swiper navigation buttons (optional) -->
+					{% comment %} <div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination mt-4"></div> {% endcomment %}
+    			</div>
+  			</div>
 		</section>
 		<!-- #banner5 end -->
 		<!-- Pricing 
@@ -1557,6 +1596,8 @@
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 	<script src="static/js/functions.js"></script>
 	<script src="static/fontawesomefree/js/all.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	<script src="static/js/jarallax.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$(window).scroll(function(){
@@ -1590,37 +1631,52 @@
 				}
 			});
 		});
-	</script>	
-	<!-- END OF BODY -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-	<script>
-  		var swiper = new Swiper(".product-swiper", {
-    		slidesPerView: 3,
-    		spaceBetween: 30,
-    		loop: true,
-    		autoplay: { delay: 3000 },
-			navigation: {
-      			nextEl: ".swiper-button-next",
-      			prevEl: ".swiper-button-prev"
-    		},
-    		pagination: {
-      			el: ".swiper-pagination",
-      			clickable: true
-    		},
-    		breakpoints: {
-      			1024: { slidesPerView: 3 },
-      			768: { slidesPerView: 2 },
-      			480: { slidesPerView: 1 }
-    		}
+
+		//SwiperJS (already included in your template, so just add this JS block)
+		document.addEventListener('DOMContentLoaded', function() {
+    		new Swiper('.case-studies-swiper', {
+				slidesPerView: 3,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: { delay: 3500 },
+				navigation: {
+					nextEl: '.case-studies-swiper .swiper-button-next',
+					prevEl: '.case-studies-swiper .swiper-button-prev'
+				},
+				pagination: {
+					el: '.case-studies-swiper .swiper-pagination',
+					clickable: true
+				},
+				breakpoints: {
+					1024: { slidesPerView: 3 },
+					768: { slidesPerView: 2 },
+					480: { slidesPerView: 1 }
+				}
+    		});
+			// Products & Services Swiper (add this)
+			new Swiper('.product-swiper', {
+				slidesPerView: 3,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: { delay: 3500 },
+				pagination: {
+					el: '.product-swiper .swiper-pagination',
+					clickable: true
+				},
+				breakpoints: {
+					1024: { slidesPerView: 3 },
+					768: { slidesPerView: 2 },
+					480: { slidesPerView: 1 }
+				}
+			});
   		});
-	</script>
-	<script>
-  		jarallax(document.querySelectorAll('.jarallax'), {
+
+		jarallax(document.querySelectorAll('.jarallax'), {
     		speed: 0.5
   		});
-	</script>
-	<script>
-  		feather.replace()
-	</script>
+
+		feather.replace()
+	</script>	
+	<!-- END OF BODY -->
 </body>
 </html>

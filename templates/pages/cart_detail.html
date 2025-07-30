@@ -1,170 +1,257 @@
 {% extends 'pages/base.html' %}
 {% load static %}
 {% block content %}
+{% include 'pages/navbar_snippet.html' %}
 <style>
-    .cart-container {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+.cart-main {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cart-items-col {
+    flex: 2;
+    min-width: 340px;
+}
+.cart-summary-col {
+    flex: 1;
+    min-width: 300px;
+}
+.cart-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 18px 0;
+    gap: 18px;
+}
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    background: #fafafa;
+}
+.cart-item-details {
+    flex: 1;
+    min-width: 0;
+}
+.cart-item-details h4 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cart-item-details h4 a {
+    color: #007bff;
+    text-decoration: none;
+}
+.cart-item-details h4 a:hover {
+    text-decoration: underline;
+}
+.cart-item-details .price {
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+.cart-actions-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+.cart-actions-form input[type="number"] {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.cart-actions-form button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart-actions-form button:hover {
+    background-color: #0056b3;
+}
+.remove-link {
+    color: #d9534f;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 8px;
+}
+.remove-link:hover {
+    text-decoration: underline;
+}
+.cart-summary-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-top: 24px;
+}
+.cart-summary-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+.cart-summary-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: #007bff;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+.checkout-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+.continue-shopping-link {
+    display: block;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+.continue-shopping-link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .cart-main {
+        flex-direction: column;
+        gap: 0;
     }
-
-    .cart-title {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
+    .cart-summary-col {
+        margin-top: 32px;
     }
-
-    .cart-item {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #eee;
-        padding: 15px 0;
-        gap: 20px;
-    }
-
-    .cart-item img {
-        width: 120px;
-        height: auto;
-        border-radius: 6px;
-    }
-
-    .cart-item-details {
-        flex: 1;
-    }
-
-    .cart-item-details h4 {
-        margin: 0 0 8px;
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    .cart-item-details p {
-        margin: 0 0 10px;
-        color: #666;
-    }
-
-    .cart-actions-form {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 5px;
-    }
-
-    .cart-actions-form input[type="number"] {
-        width: 60px;
-        padding: 6px 8px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .cart-actions-form button {
-        padding: 6px 12px;
-        font-size: 14px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .cart-actions-form button:hover {
-        background-color: #0056b3;
-    }
-
-    .remove-link {
-        color: #d9534f;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    .remove-link:hover {
-        text-decoration: underline;
-    }
-
-    .cart-total {
-        font-size: 24px;
-        font-weight: 600;
-        text-align: right;
-        margin-top: 30px;
-    }
-
-    .cart-actions {
-        margin-top: 20px;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .back-button {
-        display: inline-block;
-        padding: 10px 16px;
-        background-color: #f8f9fa;
-        color: #007bff;
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: background-color 0.2s ease;
-    }
-
-    .back-button:hover {
-        background-color: #e2e6ea;
-        text-decoration: none;
-    }
-
-    .checkout-button {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-left: 10px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: background-color 0.2s ease;
-    }
-
-    .checkout-button:hover {
-        background-color: #0056b3;
-    }
+}
 </style>
 
-<div class="cart-container">
-    <div class="cart-title">Your Cart</div>
-    {% for item in cart %}
-        <div class="cart-item">
-            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-            <div class="cart-item-details">
-                <h4>{{ item.product.name }}</h4>
-                <p>{{ item.quantity }} × {{ item.product.price }} = {{ item.total_price }}</p>
-
-                <form class="cart-actions-form" method="post" action="{% url 'apps.products:cart_update' product_id=item.product.id %}">
-                    {% csrf_token %}
-                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
-                    <button type="submit">Update</button>
-                    <a class="remove-link" href="{% url 'apps.products:cart_remove' product_id=item.product.id %}">Remove</a>
-                </form>
+<div class="cart-main">
+    <div class="cart-items-col">
+        <div class="cart-title">Shopping Cart</div>
+        {% for item in cart %}
+            <div class="cart-item">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                <div class="cart-item-details">
+                    <h4>
+                        <a href="{% url 'shop:product_detail' item.product.id %}">{{ item.product.name }}</a>
+                    </h4>
+                    <div class="price">Ksh {{ item.product.price }}</div>
+                    <form class="cart-actions-form" method="post" action="{% url 'apps.products:cart_update' product_id=item.product.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+                        <button type="submit">Update</button>
+                        <a class="remove-link" href="{% url 'apps.products:cart_remove' product_id=item.product.id %}">Remove</a>
+                    </form>
+                </div>
+                <div class="cart-item-total" style="font-weight:600; min-width:90px; text-align:right;">
+                    Ksh {{ item.total_price }}
+                </div>
             </div>
+        {% empty %}
+            <p>Your cart is currently empty.</p>
+        {% endfor %}
+    </div>
+    <div class="cart-summary-col">
+        <div class="cart-summary-box">
+            <div class="cart-summary-title">Order Summary</div>
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span>Ksh {{ cart.get_total_price }}</span>
+            </div>
+            <!-- Add more summary rows if needed (e.g., shipping, tax) -->
+            <div class="cart-summary-total">
+                <span>Total</span>
+                <span>Ksh {{ cart.get_total_price }}</span>
+            </div>
+            <a href="{% url 'shop:order_create' %}" class="checkout-button">Proceed to Checkout</a>
+            <a href="{% url 'shop:product_list' %}" class="continue-shopping-link">Continue Shopping</a>
         </div>
-    {% empty %}
-        <p>Your cart is currently empty.</p>
-    {% endfor %}
-
-    <div class="cart-total">
-        Total: {{ cart.get_total_price }}
     </div>
-
-    <div class="cart-actions">
-        <a href="{% url 'shop:product_list' %}" class="back-button">← Back to Products</a>
-        <a href="{% url 'shop:order_create' %}" class="checkout-button">Proceed to Checkout</a>
-    </div>
+    <!-- Got Everything You Need? Carousel -->
+    <div class="got-everything-section" style="max-width:1200px; margin:48px auto 0 auto;">
+        <h2 style="font-size:1.5rem; font-weight:600; margin-bottom:18px;">Got Everything You Need?</h2>
+        <div class="swiper got-everything-swiper">
+            <div class="swiper-wrapper">
+                {% for product in recommended_products %}
+                <div class="swiper-slide">
+                    <div class="got-everything-card" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:18px; text-align:center; width:220px;">
+                        <a href="{% url 'shop:product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:120px; height:120px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
+                            <div style="font-weight:500; font-size:1.05rem; margin-bottom:6px;">{{ product.name }}</div>
+                        </a>
+                        <div style="color:#007bff; font-weight:600; margin-bottom:10px;">Ksh {{ product.price }}</div>
+                        <form method="post" action="{% url 'shop:cart_add' product.id %}">
+                            {% csrf_token %}
+                            <button type="submit" style="background:#007bff; color:#fff; border:none; border-radius:5px; padding:7px 18px; font-weight:500; cursor:pointer;">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Swiper navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
 </div>
+<!-- SwiperJS CDN (add only once per page) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new Swiper('.got-everything-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 24,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                600: { slidesPerView: 3 },
+                900: { slidesPerView: 4 }
+            }
+        });
+    });
+</script>
 {% endblock %}
-
-

@@ -1804,3 +1804,370 @@ ValueError: Missing staticfiles manifest entry for 'css/style.css'
 2025-07-25 10:32:43,287 django.request WARNING  Not Found: /accounts/login/
 2025-07-25 10:33:04,959 django.request WARNING  Not Found: /accounts/login/
 2025-07-25 13:53:24,747 django.request WARNING  Not Found: /item/add-serials
+2025-07-25 14:57:11,124 django.request ERROR    Internal Server Error: /shop/cart
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\apps\products\views.py", line 145, in cart_detail
+    return render(request, "pages/cart_detail.html", {"cart": cart})
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 3: 'block'. Looking for one of: endblock.
+2025-07-26 16:02:44,475 django.request WARNING  Not Found: /favicon.ico
+2025-07-26 16:33:16,531 django.request ERROR    Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\apps\products\views.py", line 38, in product_list
+    return render(request, 'pages/product_list.html', {
+        'category': category,
+        'categories': categories,
+        'products': products_page,
+    })
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    raise TemplateSyntaxError(
+        "'%s' cannot appear more than once in the same template" % bits[0]
+    )
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+2025-07-26 16:38:35,594 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:38:35,602 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:38:35,612 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:38:35,672 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-26 16:38:35,817 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:38:35,859 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:38:49,929 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-26 16:38:49,945 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:38:49,948 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:38:49,951 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:39:19,667 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-26 16:39:43,015 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-26 16:39:43,075 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:39:43,084 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:39:43,111 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:39:44,527 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-26 16:39:44,583 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:39:44,689 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:39:44,886 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:50:05,317 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:50:05,327 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:50:05,338 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:50:05,492 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-26 16:50:05,501 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-26 16:50:05,507 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-26 16:50:05,513 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-26 16:50:05,519 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-26 16:50:05,527 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-26 16:50:05,598 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:50:05,639 django.request WARNING  Not Found: /shop/static/js/jarallax.min.js
+2025-07-26 16:50:09,555 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-26 16:50:09,568 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-26 16:50:09,570 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-26 16:50:09,713 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-26 16:50:09,718 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-26 16:50:09,725 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-26 16:50:09,730 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-26 16:50:09,743 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-26 16:50:09,750 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-26 16:50:09,807 django.request WARNING  Not Found: /shop/static/js/jarallax.min.js
+2025-07-26 16:53:46,817 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-26 16:53:46,828 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-26 16:53:46,840 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-26 16:53:46,848 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-26 16:53:46,857 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-26 16:53:46,865 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-26 16:53:46,950 django.request WARNING  Not Found: /shop/static/js/jarallax.min.js
+2025-07-28 12:22:46,172 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-28 12:22:46,175 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-28 12:22:46,179 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-28 12:22:46,181 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-28 12:22:46,182 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-28 12:22:46,184 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-28 12:22:46,259 django.request WARNING  Not Found: /shop/static/js/jarallax.min.js
+2025-07-28 12:22:47,618 django.request WARNING  Not Found: /favicon.ico
+2025-07-28 12:44:47,136 django.request WARNING  Not Found: /shop/static/img/logo_copy_refined_upscaled-removebg-preview.png
+2025-07-28 12:44:54,029 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 13:02:12,662 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 13:04:18,605 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 13:04:35,517 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 13:05:31,810 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:02:35,096 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:02:47,059 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:02:47,200 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-28 15:02:47,211 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-28 15:02:47,222 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-28 15:02:48,330 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-28 15:02:48,545 django.request WARNING  Not Found: /shop/static/css/style.css
+2025-07-28 15:02:48,675 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-28 15:03:45,901 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:17:41,728 django.request ERROR    Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\apps\products\views.py", line 38, in product_list
+    return render(request, 'pages/product_list.html', {
+        'category': category,
+        'categories': categories,
+        'products': products_page,
+    })
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+2025-07-28 15:17:42,208 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:17:44,192 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:17:44,232 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:17:55,227 django.request ERROR    Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\apps\products\views.py", line 38, in product_list
+    return render(request, 'pages/product_list.html', {
+        'category': category,
+        'categories': categories,
+        'products': products_page,
+    })
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+2025-07-28 15:31:46,671 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-28 15:31:46,679 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-28 15:31:46,686 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-28 15:31:46,689 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-28 15:31:46,690 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-28 15:31:46,693 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-28 15:31:46,751 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-28 15:31:47,822 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-28 15:31:47,855 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-28 15:31:47,935 django.request WARNING  Not Found: /shop/static/js/jquery-2.2.4.min.js
+2025-07-28 15:31:48,562 django.request WARNING  Not Found: /shop/static/js/plugins.js
+2025-07-28 15:31:48,625 django.request WARNING  Not Found: /shop/static/js/bootstrap.min.js
+2025-07-28 15:31:48,667 django.request WARNING  Not Found: /shop/static/js/functions.js
+2025-07-28 15:31:48,701 django.request WARNING  Not Found: /shop/static/fontawesomefree/js/all.min.js
+2025-07-28 15:31:56,825 django.request WARNING  Not Found: /shop/static/css/external.css
+2025-07-28 15:31:56,827 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:31:56,832 django.request WARNING  Not Found: /shop/static/css/bootstrap.min.css
+2025-07-28 15:37:43,813 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:37:50,031 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:38:06,006 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:39:04,062 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 15:39:15,187 django.request WARNING  Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-28 16:49:01,461 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-29 11:01:30,293 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-29 12:46:47,810 django.request WARNING  Not Found: /accounts/login/
+2025-07-29 12:46:50,419 django.request WARNING  Not Found: /favicon.ico
+2025-07-29 12:55:30,723 django.request WARNING  Not Found: /accounts/login/
+2025-07-29 12:55:31,800 django.request WARNING  Not Found: /favicon.ico
+2025-07-29 14:07:27,767 django.request WARNING  Not Found: /accounts/login/
+2025-07-29 15:41:49,828 django.request WARNING  Not Found: /accounts/login/
+2025-07-29 15:41:50,838 django.request WARNING  Not Found: /favicon.ico
+2025-07-29 17:02:07,278 django.request WARNING  Not Found: /favicon.ico
+2025-07-29 17:05:33,734 django.security.csrf WARNING  Forbidden (Origin checking failed - https://f8e32c9e74b2.ngrok-free.app does not match any trusted origins.): /login/
+2025-07-29 17:06:05,151 django.utils.autoreload INFO     D:\Workspace\concordnet\concordnet\settings.py changed, reloading.
+2025-07-29 17:06:14,990 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-30 09:25:30,715 django.request WARNING  Not Found: /accounts/login/
+2025-07-30 09:25:31,852 django.request WARNING  Not Found: /favicon.ico
+2025-07-30 09:25:42,805 django.request WARNING  Not Found: /accounts/login/
