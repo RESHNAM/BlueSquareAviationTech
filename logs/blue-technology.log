@@ -2171,3 +2171,148 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is n
 2025-07-30 09:25:30,715 django.request WARNING  Not Found: /accounts/login/
 2025-07-30 09:25:31,852 django.request WARNING  Not Found: /favicon.ico
 2025-07-30 09:25:42,805 django.request WARNING  Not Found: /accounts/login/
+2025-07-30 15:42:40,405 django.utils.autoreload INFO     D:\Workspace\concordnet\home\views.py changed, reloading.
+2025-07-30 15:42:50,125 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-07-30 15:45:50,497 django.request ERROR    Internal Server Error: /training
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\home\views.py", line 53, in drone_training
+    return render(request, 'pages/drone_training.html')
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contact' not found. 'contact' is not a valid view function or pattern name.
+2025-08-02 10:14:00,270 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-02 10:14:19,758 django.request WARNING  Not Found: /favicon.ico
+2025-08-02 11:43:52,147 django.request WARNING  Not Found: /accounts/login/
+2025-08-02 11:43:53,277 django.request WARNING  Not Found: /favicon.ico
+2025-08-05 11:41:10,415 django.request WARNING  Not Found: /accounts/login/
+2025-08-08 09:46:00,940 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-08 09:52:57,735 django.request WARNING  Not Found: /assets/vendor/boxicons/css/boxicons.min.css
+2025-08-08 09:52:57,741 django.request WARNING  Not Found: /assets/vendor/quill/quill.bubble.css
+2025-08-08 09:52:57,728 django.request WARNING  Not Found: /assets/vendor/bootstrap-icons/bootstrap-icons.css
+2025-08-08 09:52:57,745 django.request WARNING  Not Found: /assets/vendor/bootstrap/css/bootstrap.min.css
+2025-08-08 09:52:57,750 django.request WARNING  Not Found: /assets/vendor/quill/quill.snow.css
+2025-08-08 09:52:57,755 django.request WARNING  Not Found: /assets/vendor/remixicon/remixicon.css
+2025-08-08 09:52:57,871 django.request WARNING  Not Found: /assets/css/style.css
+2025-08-08 09:52:57,874 django.request WARNING  Not Found: /build/assets/app-BaVMVknW.css
+2025-08-08 09:52:57,879 django.request WARNING  Not Found: /assets/images/fon_logo.png
+2025-08-08 09:52:57,883 django.request WARNING  Not Found: /build/assets/app-DavWCFW_.js
+2025-08-08 09:52:58,047 django.request WARNING  Not Found: /assets/vendor/apexcharts/apexcharts.min.js
+2025-08-08 09:52:58,055 django.request WARNING  Not Found: /assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+2025-08-08 09:52:58,104 django.request WARNING  Not Found: /assets/vendor/chart.js/chart.umd.js
+2025-08-08 09:52:58,113 django.request WARNING  Not Found: /assets/vendor/echarts/echarts.min.js
+2025-08-08 09:52:58,171 django.request WARNING  Not Found: /assets/vendor/tinymce/tinymce.min.js
+2025-08-08 09:52:58,174 django.request WARNING  Not Found: /assets/vendor/quill/quill.js
+2025-08-08 09:52:58,221 django.request WARNING  Not Found: /assets/vendor/php-email-form/validate.js
+2025-08-08 09:52:59,313 django.request WARNING  Not Found: /assets/js/main.js
+2025-08-08 15:41:45,650 django.utils.autoreload INFO     D:\Workspace\concordnet\home\views.py changed, reloading.
+2025-08-08 15:41:58,088 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-08 15:42:20,767 django.utils.autoreload INFO     D:\Workspace\concordnet\home\views.py changed, reloading.
+2025-08-08 15:42:24,076 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-08 15:42:40,152 django.utils.autoreload INFO     D:\Workspace\concordnet\home\urls.py changed, reloading.
+2025-08-08 15:42:42,944 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-08 15:43:33,196 django.request ERROR    Internal Server Error: /course_detail
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Workspace\concordnet\home\views.py", line 58, in drone_course_detail
+    return render(request, 'pages/course_detail.html')
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contact' not found. 'contact' is not a valid view function or pattern name.
+2025-08-09 07:32:03,093 django.request WARNING  Not Found: /favicon.ico

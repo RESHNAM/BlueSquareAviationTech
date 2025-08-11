@@ -49,30 +49,10 @@ def feedback(request):
     return render(request, 'pages/feedback.html', {'form': feedb})
 
 
-# class UserViewSet(viewsets.ModelViewSet):
-#     """
-#     API endpoint that allows users to be viewed or edited.
-#     """
-#     queryset = User.objects.all().order_by('-date_joined')
-#     serializer_class = UserSerializer(queryset)
-#     permission_classes = [permissions.IsAuthenticated]
+def drone_training(request):
+    return render(request, 'pages/drone_training.html')
 
 
-# class GroupViewSet(viewsets.ModelViewSet):
-#     """
-#     API endpoint that allows groups to be viewed or edited.
-#     """
-#     queryset = Group.objects.all().order_by('name')
-#     serializer_class = GroupSerializer(queryset)
-#     permission_classes = [permissions.IsAuthenticated]
 
-
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('login')
-#     else:
-#         form = UserCreationForm()
-#     return render(request, 'auth/register.html', {'form': form})
+def drone_course_detail(request):
+    return render(request, 'pages/course_detail.html')

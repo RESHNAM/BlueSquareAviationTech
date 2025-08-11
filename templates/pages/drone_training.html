@@ -1,0 +1,243 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %} {% include 'pages/navbar_snippet.html' %} {% endcomment %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<style>
+    /* Hero Section */
+    .course-hero {
+        background: linear-gradient(120deg, #f8fafc 0%, #e3f0ff 100%);
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .course-hero h1 {
+        color: #1a237e;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    .course-hero .lead {
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 24px;
+    }
+    .course-hero ul {
+        font-size: 1.1rem;
+        margin-bottom: 32px;
+    }
+    .course-hero .btn-primary {
+        background-color: #eef2f5ff;
+        border: none;
+        font-size: 1.1rem;
+        padding: 12px 32px;
+        border-radius: 6px;
+    }
+    .course-hero .btn-primary:hover {
+        background-color: #eef2f5ff;
+    }
+
+    /* Course Details Section */
+    .course-details {
+        background: #fff;
+    }
+    .course-details h2 {
+        color: #1976d2;
+        font-size: 2rem;
+        margin-bottom: 32px;
+    }
+    .course-details .card {
+        border: 2px solid #e3f0ff;
+        border-radius: 10px;
+        transition: box-shadow 0.2s, transform 0.3s, border-color 0.3s;
+        min-width: 300px;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .course-details .card:hover {
+        box-shadow: 0 8px 24px rgba(25, 118, 210, 0.12);
+        transform: translateY(-10px) scale(1.04);
+        border-color: #1976d2;
+    }
+    .course-details .card-title {
+        color: #1a237e;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .course-details .card-text {
+        color: #444;
+        font-size: 1rem;
+    }
+
+    /* Swiper slider styles */
+    .course-details .swiper {
+        width: 100%;
+        padding: 30px 0;
+    }
+    .course-details .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: auto;
+    }
+
+    /* Enroll Section */
+    .enroll-section {
+        background: #1c1c1c;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .enroll-section h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .enroll-section p {
+        font-size: 1.2rem;
+    }
+    .enroll-section .btn-light {
+        color: #1c1c1c;
+        background: #fff;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        padding: 12px 32px;
+        border: none;
+        font-weight: 600;
+    }
+    .enroll-section .btn-light:hover {
+        background: #e3f0ff;
+        color: #1c1c1c;
+    }
+    .course-products .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .product-card {
+        border: 2px solid #e3f0ff;
+        border-radius: 10px;
+        transition: box-shadow 0.2s, transform 0.3s, border-color 0.3s;
+    }
+    .product-card:hover {
+        box-shadow: 0 8px 24px rgba(25, 118, 210, 0.12);
+        transform: translateY(-10px) scale(1.04);
+        border-color: #1976d2;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767px) {
+        .course-hero h1 {
+            font-size: 2rem;
+        }
+        .course-details h2,
+        .enroll-section h2 {
+            font-size: 1.4rem;
+        }
+        .course-hero .btn-primary,
+        .enroll-section .btn-light {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+    }
+</style>
+
+<section class="course-hero py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h1 class="display-4 fw-bold">Drone Training & Certification</h1>
+                <p class="lead">Master drone piloting with our hands-on training, expert instructors, and industry-recognized certification.</p>
+                <ul class="list-unstyled mb-4">
+                    <li><i class="fa fa-check text-success me-2"></i> Practical flight sessions</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Safety & regulations</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Industry applications</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Certification exam prep</li>
+                </ul>
+                <a href="{% url 'home:index' %}#banner" class="btn btn--primary btn--bordered">Enroll Now</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'img/Professional-Government-Drone-Pilot-Training-Converted-Upscaled.jpeg' %}" alt="Drone Training" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="course-products py-5">
+    <div class="container">
+        <h2 class="mb-4 text-center">Our Drone Training Courses</h2>
+        <div class="row g-4">
+            <!-- Example card, repeat for each course/product -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/mapping-class-bundle.jpg' %}" class="card-img-top" alt="Course 1">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Drone Mapping, Modelling And Surveying Bundle</h5>
+                        <p class="card-text">Drone mapping has higher paying jobs and less competition. Learn how to deliver profitable mapping services from an expert who has completed over 5000 missions.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/Part 107.jpg' %}" class="card-img-top" alt="Course 2">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Part 107 Made Easy</h5>
+                        <p class="card-text">This industry-leading course will help you pass the FAA Part 107 drone license test - so you can fly drones commercially all over the world.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/Drone-Videography-and-Photography-Fundamentals.jpg' %}" class="card-img-top" alt="Course 3">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Drone Photo & Video Masterclass</h5>
+                        <p class="card-text">The ultimate course to take your photography & videography skills to the next-level.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/drone-search-rescue.jpg' %}" class="card-img-top" alt="Course 4">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Drone Search and Rescue Essentials</h5>
+                        <p class="card-text">Detailed process for how to plan, execute, and optimize drone-assisted search and rescue operations.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/Drone-Maneuvers-Mastery.jpg' %}" class="card-img-top" alt="Course 5">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Drone Maneuvers Mastery.</h5>
+                        <p class="card-text">Master your drone flying skills with over 50 challenging maneuvers.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{% static 'img/Real-Estate-Photographer.jpg' %}" class="card-img-top" alt="Course 6">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Real Estate Photo & Video</h5>
+                        <p class="card-text">Build a profitable real estate photo business using the proven processes of two full time professionals.</p>
+                        <a href="#" class="btn btn--primary btn--bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="enroll" class="enroll-section py-5 text-white">
+    <div class="container text-center">
+        <h2 class="mb-3 text-white">Ready to Start Flying?</h2>
+        <p class="mb-4">Join our next cohort and become a certified drone pilot. No prior experience required!</p>
+        <a href="{% url 'home:index' %}#banner" class="btn btn--primary btn--bordered">Contact Us to Enroll</a>
+    </div>
+</section>
+<script>
+    
+</script>
+
+{% endblock %}

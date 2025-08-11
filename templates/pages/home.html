@@ -319,11 +319,15 @@
 			object-fit: contain;
 		}
 
+		/* Force navbar to stick to the top edge */
 		.custom-navbar {
 			background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 			z-index: 1000;
 			transition: all 0.3s ease-in-out;
+			margin-top: 0;
+			padding-top: 0;
+			top: 0;
 		}
 
 		.custom-navbar .nav-link {
@@ -345,13 +349,10 @@
 		body, html {
 			margin: 0;
 			padding: 0;
-		}
-
-		/* Force navbar to stick to the top edge */
-		.custom-navbar {
-			margin-top: 0;
-			padding-top: 0;
-			top: 0;
+			font-size: 16px;
+			color: #eaeaea; /* Light grey for readability on dark bg */
+			line-height: 1.6;
+			font-family: 'Open Sans', sans-serif;
 		}
 
 		/* Clean up bottom spacing */
@@ -366,12 +367,6 @@
 			margin: 0;
 		}
 
-		body {
-			font-size: 16px;
-			color: #eaeaea; /* Light grey for readability on dark bg */
-			line-height: 1.6;
-			font-family: 'Open Sans', sans-serif;
-		}
 
 		h1, h2, h3, h4 {
 			color: #ffffff; /* Headings stay white */
@@ -1071,21 +1066,28 @@
 				<div class="row justify-content-center align-items-center">
 					<!-- Partner Logo 1 -->
 					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
-						<img src="{% static 'img/partner1.png' %}" alt="Partner 1" class="img-fluid" style="max-height: 60px;">
+						<img src="{% static 'img/SAF-MAIN-LOGO.jpg' %}" alt="Partner 1" class="img-fluid" style="max-height: 60px;">
 					</div>
 					<!-- Partner Logo 2 -->
 					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
-						<img src="{% static 'img/partner2.png' %}" alt="Partner 2" class="img-fluid" style="max-height: 60px;">
+						<img src="{% static 'img/airtel-logo.jpg' %}" alt="Partner 2" class="img-fluid" style="max-height: 60px;">
 					</div>
 					<!-- Partner Logo 3 -->
 					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
-						<img src="{% static 'img/partner3.png' %}" alt="Partner 3" class="img-fluid" style="max-height: 60px;">
+						<img src="{% static 'img/WinterParkPhotography.jpg' %}" alt="Partner 3" class="img-fluid" style="max-height: 60px;">
 					</div>
 					<!-- Partner Logo 4 -->
 					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
-						<img src="{% static 'img/partner4.png' %}" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
+						<img src="{% static 'img/Tacuman.jpg' %}" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
 					</div>
-					<!-- Add more as needed -->
+					<!-- Partner Logo 5 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/DtoneSnap.jpg' %}" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
+					</div>
+					<!-- Partner Logo 6 -->
+					<div class="col-6 col-sm-4 col-md-2 mb-4 text-center">
+						<img src="{% static 'img/Drone.jpg' %}" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1109,7 +1111,7 @@
 						<!-- Case Study 1 -->
 						<div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-agriculture.jpg' %}" class="card-img-top" alt="Agriculture Project">
+								<img src="{% static 'img/drone-case-agrics.jpg' %}" class="card-img-top" alt="Agriculture Project">
 								<div class="card-body">
 									<h5 class="card-title">Smart Agriculture Monitoring</h5>
 									<p class="card-text">Deployed precision drones for crop health analysis, increasing yields by 20% for a major farm in Kenya.</p>
@@ -1120,10 +1122,10 @@
 						<!-- Case Study 2 -->
 						<div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<img src="{% static 'img/drone-service-delivery.jpg' %}" class="card-img-top" alt="Infrastructure Project">
 								<div class="card-body">
-									<h5 class="card-title">Bridge Inspection</h5>
-									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<h5 class="card-title">UPS Flight Forward</h5>
+									<p class="card-text">UPS has also made significant strides in the use of drones for medical supply delivery. UPS Flight Forward uses drones to transport urgent medical supplies, including blood samples and vaccines, to remote or hard-to-reach areas. Drones offer rapid delivery capabilities, improving response times for critical healthcare needs.</p>
 									<span class="badge badge-info">Infrastructure</span>
 								</div>
 							</div>
@@ -1131,10 +1133,10 @@
 						<!-- Case Study 3 -->
 						 <div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<img src="{% static 'img/expressway drones.jpg' %}" class="card-img-top" alt="Infrastructure Project">
 								<div class="card-body">
-									<h5 class="card-title">Bridge Inspection</h5>
-									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<h5 class="card-title">Drones in Construction and Infrastructure Monitoring</h5>
+									<p class="card-text">Used aerial inspection drones to assess structural integrity of infrastructures, reducing manual inspection time by 60%.</p>
 									<span class="badge badge-info">Infrastructure</span>
 								</div>
 							</div>
@@ -1142,10 +1144,10 @@
 						<!-- Case Study 4 -->
 						<div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<img src="{% static 'img/movie-ent.jpg' %}" class="card-img-top" alt="Infrastructure Project">
 								<div class="card-body">
-									<h5 class="card-title">Bridge Inspection</h5>
-									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<h5 class="card-title">Drones in Media and Entertainment</h5>
+									<p class="card-text">Skycam, a leader in drone cinematography, has transformed how films, TV shows, and live sports events are filmed. By using drones, Skycam can capture breathtaking aerial views of scenes, offering directors and producers an entirely new visual perspective. These drones have made aerial cinematography more accessible, reducing the need for expensive helicopters or cranes. </p>
 									<span class="badge badge-info">Infrastructure</span>
 								</div>
 							</div>
@@ -1153,10 +1155,10 @@
 						<!-- Case Study 5 -->
 						 <div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<img src="{% static 'img/the-ugly-swamp.jpg' %}" class="card-img-top" alt="Infrastructure Project">
 								<div class="card-body">
-									<h5 class="card-title">Bridge Inspection</h5>
-									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<h5 class="card-title">Drones in Environmental Monitoring and Conservation</h5>
+									<p class="card-text">The Nature Conservancy, an environmental nonprofit, has used drones to monitor forests, wetlands, and other protected areas. Drones help researchers track endangered species, assess the health of ecosystems, and monitor the impact of environmental changes such as deforestation and climate change.</p>
 									<span class="badge badge-info">Infrastructure</span>
 								</div>
 							</div>
@@ -1164,10 +1166,10 @@
 						<!-- Case Study 6 -->
 						 <div class="swiper-slide">
 							<div class="card h-100 shadow-sm">
-								<img src="{% static 'img/case-infrastructure.jpg' %}" class="card-img-top" alt="Infrastructure Project">
+								<img src="{% static 'img/crash-test.jpg' %}" class="card-img-top" alt="Infrastructure Project">
 								<div class="card-body">
-									<h5 class="card-title">Bridge Inspection</h5>
-									<p class="card-text">Used aerial inspection drones to assess structural integrity of bridges, reducing manual inspection time by 60%.</p>
+									<h5 class="card-title">Drones in Insurance and Risk Assessment </h5>
+									<p class="card-text">Allianz, a global leader in insurance, uses drones to assess property damage following natural disasters such as hurricanes and floods. Drones can quickly capture detailed images of affected properties, allowing adjusters to evaluate the extent of damage without having to visit the site physically.</p>
 									<span class="badge badge-info">Infrastructure</span>
 								</div>
 							</div>

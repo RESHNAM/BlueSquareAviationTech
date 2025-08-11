@@ -1,0 +1,128 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="course-detail-hero py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h1 class="display-4 fw-bold">Drone Mapping, Modeling & Surveying Bundle</h1>
+                <p class="lead">Learn how to deliver profitable mapping services from an expert who has completed over 5000 missions. Get certified and unlock high-paying drone jobs.</p>
+                <ul class="list-unstyled mb-4">
+                    <li><i class="fa fa-check text-success me-2"></i> 50+ video lessons</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Lifetime access</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Certificate of completion</li>
+                    <li><i class="fa fa-check text-success me-2"></i> Expert instructor support</li>
+                </ul>
+                <a href="{% url 'home:index' %}#banner" class="btn btn--primary btn--bordered">Enroll Now</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'img/mapping-class-bundle.jpg' %}" alt="Drone Mapping Course" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="course-detail-info py-5">
+    <div class="container">
+        <h2 class="mb-4">Course Overview</h2>
+        <p>
+            This bundle covers everything you need to know about drone mapping, modeling, and surveying. From flight planning and data capture to processing and delivering results to clients, you'll gain hands-on skills for real-world projects.
+        </p>
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Who is this for?</h5>
+                        <p class="card-text">Aspiring drone pilots, surveyors, engineers, and anyone interested in aerial mapping.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">What you'll learn</h5>
+                        <ul>
+                            <li>Drone mapping fundamentals</li>
+                            <li>Flight planning & safety</li>
+                            <li>Data processing & modeling</li>
+                            <li>Delivering client-ready results</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Course Features</h5>
+                        <ul>
+                            <li>Step-by-step video lessons</li>
+                            <li>Downloadable resources</li>
+                            <li>Quizzes & assignments</li>
+                            <li>Certificate on completion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="enroll" class="enroll-section py-5 text-white">
+    <div class="container text-center">
+        <h2 class="mb-3">Ready to Get Started?</h2>
+        <p class="mb-4">Join now and become a certified drone mapping professional.</p>
+        <a href="{% url 'home:index' %}#banner" class="btn btn--primary btn--bordered">Contact Us to Enroll</a>
+
+    </div>
+</section>
+
+<style>
+.course-detail-hero .btn-primary {
+    background-color: #eef2f5ff;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 32px;
+    border-radius: 6px;
+}
+.course-detail-hero .btn-primary:hover {
+    background-color: #1565c0;
+}
+.course-detail-info .card {
+    border: 2px solid #e3f0ff;
+    border-radius: 10px;
+    transition: box-shadow 0.2s, transform 0.3s, border-color 0.3s;
+}
+.course-detail-info .card:hover {
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.12);
+    transform: translateY(-10px) scale(1.04);
+    border-color: #1976d2;
+}
+.enroll-section {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.enroll-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.enroll-section p {
+    font-size: 1.2rem;
+}
+.enroll-section .btn-light {
+    color: #1c1c1c;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    padding: 12px 32px;
+    border: none;
+    font-weight: 600;
+}
+.enroll-section .btn-light:hover {
+    background: #e3f0ff;
+    color: #1c1c1c;
+}
+</style>
+{% endblock %}
